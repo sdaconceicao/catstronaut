@@ -1,0 +1,10 @@
+{
+  "name": "catstronauts",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Castronauts project",
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
