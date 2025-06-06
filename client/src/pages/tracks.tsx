@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 
 import TrackCard from "../containers/track-card";
+import { Track } from "../__generated__/types";
 import QueryResult from "../components/query-result";
 
 import { Layout } from "../components";

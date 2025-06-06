@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
+
 import { colors, mq } from "../styles";
 import { humanReadableTimeFromSeconds } from "../utils/helpers";
 import type { Track } from "../__generated__/types";
@@ -9,10 +11,10 @@ import type { Track } from "../__generated__/types";
  * for each track populating the tracks grid homepage.
  */
 const TrackCard: React.FC<{ track: Track }> = ({ track }) => {
-  const { title, thumbnail, author, length, modulesCount } = track;
+  const { title, thumbnail, author, length, modulesCount, id } = track;
 
   return (
-    <CardContainer>
+    <CardContainer to={`/track/${id}`}>
       <CardContent>
         <CardImageContainer>
           <CardImage src={thumbnail || ""} alt={title} />
@@ -38,7 +40,7 @@ const TrackCard: React.FC<{ track: Track }> = ({ track }) => {
 export default TrackCard;
 
 /** Track Card styled components */
-const CardContainer = styled.div({
+const CardContainer = styled(Link)({
   borderRadius: 6,
   color: colors.text,
   backgroundSize: "cover",
